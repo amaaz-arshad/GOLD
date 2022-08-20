@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <style>
+      td {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <p style="font-size: 50px; text-align: center">Pakistan Oxygen Limited</p>
+    <hr style="border-bottom: 5px solid black; border-top: none" />
+    <table width="100%">
+      <tr>
+        <td>TDLS #</td>
+        <td>${route.params.TDLS_No}</td>
+      </tr>
+      <tr>
+        <td>Signture</td>
+        <td>
+          <img
+            src="data:image/png;base64,${signImage}"
+            width="400"
+            height="180"
+          />
+        </td>
+      </tr>
+    </table>
+    <p>TDLS #: ${route.params.TDLS_No}</p>
+    <p>Date: ${route.params.ScheduledDate}</p>
+    <p>Customer #: ${route.params.CustomerNo}</p>
+    <p>Name: ${route.params.CustomerName}</p>
+    <p>Product Code: ${route.params.PrimaryProduct}</p>
+    <p>Description: ${route.params.ProductName}</p>
+    <p>Tanker #: ${route.params.TractorNumberPlate}</p>
+    <p>Decanter Name: ${route.params.DecanterName}</p>
+    <p>Driver Name: ${route.params.DriverName}</p>
+    <br />
+    <p>Date & Time In: 2021-08-12</p>
+    <p>Odometer In: 1000</p>
+    <p>Date & Time Out: 2021-08-12</p>
+    <p>Odometer Out: 1050</p>
+    <p>
+      Signture:
+      <img src="data:image/png;base64,${signImage}" width="100" height="100" />
+    </p>
+  </body>
+</html>

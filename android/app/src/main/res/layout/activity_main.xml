@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <!-- Sample Print Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sample_print"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_connect"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="Connect to printer" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_receipt"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/receipt"
+                android:onClick="printReceipt" />
+        </LinearLayout>
+
+        <!-- Text Print Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/text_print"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                android:cursorVisible="false"
+                android:privateImeOptions="defaultInputmode=english;symbol=true"
+                android:hint="@string/edit_text" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:text="@string/print"
+                android:onClick="printText" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cbx_emphasis"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/emphasis"
+            android:onClick="onCheckboxClicked" />
+        <CheckBox
+            android:id="@+id/cbx_underline"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/underline"
+            android:onClick="onCheckboxClicked" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="@string/charsize"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            <Spinner
+                android:id="@+id/spn_charsize"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/char_size_array" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/justification"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+            <RadioButton
+                android:id="@+id/rbtn_left"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:checked="true"
+                android:text="@string/left"
+                android:onClick="onRadioButtonClicked" />
+            <RadioButton
+                android:id="@+id/rbtn_center"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/center"
+                android:onClick="onRadioButtonClicked" />
+            <RadioButton
+                android:id="@+id/rbtn_right"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/right"
+                android:onClick="onRadioButtonClicked" />
+        </RadioGroup>
+
+        <!-- Barcode Print Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/sample_barcode"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_1Dbarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/barcode_1d"
+                android:onClick="print1DBarcode" />
+            <Button
+                android:id="@+id/btn_2Dbarcode"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/barcode_2d"
+                android:onClick="print2DBarcode" />
+            <Button
+                android:id="@+id/btn_GS1databar"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/barcode_gs1"
+                android:onClick="printGS1Databar" />
+        </LinearLayout>
+
+        <!-- MSR Control Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/msr_mode_setting"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_dblTrack"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/track23"
+                android:onClick="setMSRDoubleTrackMode" />
+            <Button
+                android:id="@+id/btn_tripleTrack"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/track123"
+                android:onClick="setMSRTripleTrackMode" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/msr_cancel"
+                android:onClick="cancelMSRMode" />
+            <Button
+                android:id="@+id/btn_clear"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                style="@style/Widget.AppCompat.Button"
+                android:text="@string/msr_clear"
+                android:onClick="clearMSRInfo" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msr_1track"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView android:id="@+id/view_track1"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msr_2track"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView android:id="@+id/view_track2"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msr_3track"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView android:id="@+id/view_track3"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+</ScrollView>

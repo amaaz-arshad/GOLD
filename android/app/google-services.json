@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "465603722981",
+    "project_id": "gold-cfd78",
+    "storage_bucket": "gold-cfd78.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:465603722981:android:49e161724c634b8b1d9e0c",
+        "android_client_info": {
+          "package_name": "com.gold"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "465603722981-55mp68essj5heaipi0k34lkbe2v04sh1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC7f4k472fHQ769l4bgeQ3a3tAIvcrgp8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "465603722981-55mp68essj5heaipi0k34lkbe2v04sh1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
